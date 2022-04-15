@@ -1,0 +1,1 @@
+https://www.sockoye.com/ (GET)  # /usr/bin/sqlmap -u https://www.sockoye.com/ --dbs

